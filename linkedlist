@@ -1,0 +1,57 @@
+ANS:1---
+ Delete the Middle Node of a Linked List
+class Solution {
+    public ListNode deleteMiddle(ListNode head) {
+        if(head.next==null)
+        {
+            return null;
+        }
+        int countnodes=0;
+        ListNode temp=head;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            countnodes++;
+        }
+        int n=(countnodes/2)-1;
+        temp=head;
+        while(n!=0)
+        {
+            temp=temp.next;
+            n--;
+        }
+        temp.next=temp.next.next;
+        return head;
+       
+        
+    }
+}
+ANS:2--    Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        if(head.next==null && head==null)
+        {
+            return null;
+        }
+        int countnodes=0;
+        ListNode temp=head;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            countnodes++;
+        }
+        int n=(countnodes/2);
+        temp=head;
+        while(n!=0)
+        {
+            temp=temp.next;
+            n--;
+        }
+        return temp;
+    }
+}
+ANS:3--
+
+
